@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<commandDefinition name="Abort SnapMirror - copy" samplingIntervalInSeconds="60" stringRepresentation="DestinationCluster + &quot;:&quot; + DestinationVserver + &quot;/&quot; + DestinationVolume" timeoutInSeconds="600" type="STANDARD">
+    <certification>COMMUNITY</certification>
+    <uuid>6771f4ab-9b3a-44d1-bb17-24e51217833a</uuid>
+    <version>1.0.0</version>
+    <command-implementations>
+        <command-implementation>
+            <command>use strict;
+use Getopt::Long;
+use NaServer;
+use WFAUtil;
+
+my $DestinationCluster;
+my $DestinationClusterIp;
+my $DestinationVserver;
+my $DestinationVolume;
+my $ClearCheckpoint;
+
+GetOptions(
+    &quot;DestinationCluster=s&quot;   =&gt; \$DestinationCluster,
+    &quot;DestinationClusterIp=s&quot; =&gt; \$DestinationClusterIp,
+    &quot;DestinationVserver=s&quot;   =&gt; \$DestinationVserver,
+    &quot;DestinationVolume=s&quot;    =&gt; \$DestinationVolume,
+    &quot;ClearCheckpoint=s&quot;      =&gt; \$ClearCheckpoint
+) or die 'Illegal command parameters\n';
+
+my $wfa_util = WFAUtil-&gt;new();
+
+eval {
+
+    $wfa_util-&gt;sendLog('INFO',
+        &quot;Connecting to the cluster: $DestinationCluster/$DestinationClusterIp&quot;
+    );
+    my $server
+        = $wfa_util-&gt;connect($DestinationClusterIp, $DestinationVserver);
+
+    $wfa_util-&gt;sendLog('INFO',
+        &quot;Aborting transfer for the relationship : $DestinationCluster://$DestinationVserver/$DestinationVolume&quot;
+    );
+
+    my %input = (
+        'destination-vserver' =&gt; $DestinationVserver,
+        'destination-volume'  =&gt; $DestinationVolume
+    );
+
+    if (defined $ClearCheckpoint) {
+        $input{'clear-checkpoint'} = $ClearCheckpoint;
+    }
+    $server-&gt;snapmirror_abort(%input);
+    $wfa_util-&gt;sendLog('INFO', 'Abort operation completed successfully.');
+};
+
+$wfa_util-&gt;checkEvalFailure(
+    &quot;Failed to abort transfer for the relationship $DestinationCluster://$DestinationVserver/$DestinationVolume&quot;,
+    $@
+);
+
+</command>
+            <commandLanguage>PERL</commandLanguage>
+        </command-implementation>
+    </command-implementations>
+    <parameter-mappings>
+        <parameter-mapping objectName="ClearCheckpoint" parameterName="ClearCheckpoint"/>
+        <parameter-mapping attribute="secondary_volume.vserver.cluster.name" objectName="SnapMirror" parameterName="DestinationCluster">
+            <dictionary-entry>81ff2069-8783-49e5-8141-947e84554c5a</dictionary-entry>
+        </parameter-mapping>
+        <parameter-mapping attribute="secondary_volume.vserver.cluster.primary_address" objectName="SnapMirror" parameterName="DestinationClusterIp">
+            <dictionary-entry>81ff2069-8783-49e5-8141-947e84554c5a</dictionary-entry>
+        </parameter-mapping>
+        <parameter-mapping attribute="secondary_volume.name" objectName="SnapMirror" parameterName="DestinationVolume">
+            <dictionary-entry>81ff2069-8783-49e5-8141-947e84554c5a</dictionary-entry>
+        </parameter-mapping>
+        <parameter-mapping attribute="secondary_volume.vserver.name" objectName="SnapMirror" parameterName="DestinationVserver">
+            <dictionary-entry>81ff2069-8783-49e5-8141-947e84554c5a</dictionary-entry>
+        </parameter-mapping>
+    </parameter-mappings>
+    <congruenceTest></congruenceTest>
+    <description>The 'Abort SnapMirror' command stops ongoing transfers for a SnapMirror/SnapVault relationship. The relationship is identified by its destination endpoint.</description>
+    <minSoftwareVersions>Clustered Data ONTAP 8.2.0</minSoftwareVersions>
+    <parameter-definitions>
+        <parameter-definition description="After the abort operation is completed successfully, the destination volume might contain a restart checkpoint. The restart checkpoint can be used by a subsequent transfer to restart and continue the aborted SnapMirror transfer. If ClearCheckpoint input is true, any existing restart checkpoint is cleared. The default is false, which means that the restart checkpoint is not cleared." isMandatory="false" name="ClearCheckpoint" type="Boolean">
+            <uuid>5750689b-22a1-405e-9c5e-8a861c26af33</uuid>
+        </parameter-definition>
+        <parameter-definition description="Destination Cluster Name." isMandatory="true" name="DestinationCluster" type="String">
+            <uuid>8b70a94e-65b2-4629-8771-f25e6356a764</uuid>
+        </parameter-definition>
+        <parameter-definition description="Destination Cluster IP address." isMandatory="true" name="DestinationClusterIp" type="String">
+            <uuid>716756a3-7681-41a3-b172-fd8db5b105cd</uuid>
+        </parameter-definition>
+        <parameter-definition description="Destination Volume Name." isMandatory="true" name="DestinationVolume" type="String">
+            <uuid>af68df05-7d41-4cb2-87b1-2f13b4eeaf7d</uuid>
+        </parameter-definition>
+        <parameter-definition description="Destination Storage Virtual Machine Name." isMandatory="true" name="DestinationVserver" type="String">
+            <uuid>89e20fde-9ce2-4152-bb51-78aee01a8479</uuid>
+        </parameter-definition>
+    </parameter-definitions>
+    <reservationScript></reservationScript>
+    <schemeNames>cm_storage</schemeNames>
+</commandDefinition>

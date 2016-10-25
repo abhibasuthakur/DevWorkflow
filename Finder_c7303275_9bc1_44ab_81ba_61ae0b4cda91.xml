@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<finder name="25c50d3f-0db7-4ee9-ac7f-d28c21c500b2" privateFinder="true">
+    <certification>COMMUNITY</certification>
+    <uuid>c7303275-9bc1-44ab-81ba-61ae0b4cda91</uuid>
+    <version>1.0.0</version>
+    <attributes>
+        <attributes alias="secondary_volume.name" columnName="secondary_volume.name" sortingOrder="ASCENDING">
+            <filter>fd97280a-b0ea-4ab8-9a14-25bd5982c45a</filter>
+        </attributes>
+        <attributes alias="secondary_volume.vserver.cluster.primary_address" columnName="secondary_volume.vserver.cluster.primary_address" sortingOrder="ASCENDING">
+            <filter>fd97280a-b0ea-4ab8-9a14-25bd5982c45a</filter>
+        </attributes>
+        <attributes alias="secondary_volume.vserver.name" columnName="secondary_volume.vserver.name" sortingOrder="ASCENDING">
+            <filter>fd97280a-b0ea-4ab8-9a14-25bd5982c45a</filter>
+        </attributes>
+        <attributes alias="volume.name" columnName="volume.name" sortingOrder="ASCENDING">
+            <filter>fd97280a-b0ea-4ab8-9a14-25bd5982c45a</filter>
+        </attributes>
+        <attributes alias="volume.vserver.cluster.primary_address" columnName="volume.vserver.cluster.primary_address" sortingOrder="ASCENDING">
+            <filter>fd97280a-b0ea-4ab8-9a14-25bd5982c45a</filter>
+        </attributes>
+        <attributes alias="volume.vserver.name" columnName="volume.vserver.name" sortingOrder="ASCENDING">
+            <filter>fd97280a-b0ea-4ab8-9a14-25bd5982c45a</filter>
+        </attributes>
+    </attributes>
+    <dictionary-entry>81ff2069-8783-49e5-8141-947e84554c5a</dictionary-entry>
+    <filters>
+        <filter>fd97280a-b0ea-4ab8-9a14-25bd5982c45a</filter>
+    </filters>
+</finder>

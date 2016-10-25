@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <pack>
-    <author>abhi</author>
+    <author>abhit</author>
     <certification>COMMUNITY</certification>
-    <description>Test Pack 2</description>
+    <description>Test Pack</description>
     <entities/>
     <minWfaVersion>4.1.0.0.0</minWfaVersion>
-    <name>Test Pack 2</name>
-    <uuid>d06ed558-031b-4476-850d-86f73d91d309</uuid>
+    <name>Test Pack</name>
+    <uuid>50812de0-7725-47db-9bfe-30ffa3096a53</uuid>
     <version>1.0.0</version>
 </pack>

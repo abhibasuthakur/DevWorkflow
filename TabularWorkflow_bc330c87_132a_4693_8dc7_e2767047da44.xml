@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tabularWorkflow considerReservedElements="true" description="The 'Abort SnapMirror' workflow stops ongoing transfers for a SnapMirror or SnapVault relationship. The relationship is identified by its destination endpoint." enableElementExistenceValidation="true" name="Abort SnapMirror relationship Copy- Test1" readyForProduction="false">
+    <certification>COMMUNITY</certification>
+    <uuid>bc330c87-132a-4693-8dc7-e2767047da44</uuid>
+    <version>1.0.0</version>
+    <workflow-commands>
+        <workflow-command breakpointBeforeCommand="false" commandAlias="Abort SnapMirror - copy" uuid="b11b5f8f-2a25-4724-be80-9d4fa0e6b4b9">
+            <execution-condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysCondition"/>
+            <command-definition>6771f4ab-9b3a-44d1-bb17-24e51217833a</command-definition>
+        </workflow-command>
+    </workflow-commands>
+    <custom-http-method-type>NA</custom-http-method-type>
+    <find-charts/>
+    <minSoftwareVersions>Clustered Data ONTAP 8.2.0</minSoftwareVersions>
+    <return-parameters/>
+    <rows>
+        <row>
+            <command-details>
+                <command-detail failureStrategy="ABORT">
+                    <command-mapped-objects>
+                        <command-mapped-object objectName="SnapMirror" variableName="snapmirror2">
+                            <define-object>
+<define-object-property-values>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
+        <dictionary-entry-property>f2e7ba2d-7a23-4fe4-8ece-11d9ed4da6cc</dictionary-entry-property>
+    </define-object-property-value>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
+        <dictionary-entry-property>307b198e-6ead-4c6f-a1ae-fd84b84f8599</dictionary-entry-property>
+    </define-object-property-value>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
+        <dictionary-entry-property>ae3c5328-29a5-478a-a56d-054a6d0b032a</dictionary-entry-property>
+    </define-object-property-value>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue" value="$DestinationVolume">
+        <dictionary-entry-property>b799c158-8c52-411b-8f45-a654a3766ffd</dictionary-entry-property>
+    </define-object-property-value>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
+        <dictionary-entry-property>152478a4-d65c-4f51-bc16-371861a073bd</dictionary-entry-property>
+    </define-object-property-value>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
+        <dictionary-entry-property>f9f7c20e-5012-482c-8632-fd8608d558e4</dictionary-entry-property>
+    </define-object-property-value>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
+        <dictionary-entry-property>3a7a1082-89f6-48a3-9636-dc7479504b5e</dictionary-entry-property>
+    </define-object-property-value>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
+        <dictionary-entry-property>a549b9e7-8e5b-488f-b73e-ea5256b8e1a5</dictionary-entry-property>
+    </define-object-property-value>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
+        <dictionary-entry-property>73bb1f8e-2bf0-4822-89f0-8aa0da2d3d03</dictionary-entry-property>
+    </define-object-property-value>
+    <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
+        <dictionary-entry-property>66d0cdf8-f694-493c-b10e-6c4d1015c817</dictionary-entry-property>
+    </define-object-property-value>
+</define-object-property-values>
+                            </define-object>
+                            <dictionary-entry>81ff2069-8783-49e5-8141-947e84554c5a</dictionary-entry>
+                            <resource-selector type="CREATE">
+<dictionary-entry>81ff2069-8783-49e5-8141-947e84554c5a</dictionary-entry>
+<execution-condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysCondition"/>
+<filter-parameter-values>
+    <filter-parameter-value value="$DestinationCluster">
+        <parameter>c278bdee-4d05-478d-858a-54016c90af9b</parameter>
+    </filter-parameter-value>
+    <filter-parameter-value value="$DestinationVolume">
+        <parameter>c9da62f1-9d6e-47a2-9064-077607911274</parameter>
+    </filter-parameter-value>
+    <filter-parameter-value value="$DestinationVserver">
+        <parameter>70aaceb9-d742-4294-8808-5820663a4308</parameter>
+    </filter-parameter-value>
+</filter-parameter-values>
+<finder>966bbea4-132b-4267-b6a9-f41865a9a1ce</finder>
+<natural-key-values/>
+                            </resource-selector>
+                        </command-mapped-object>
+                    </command-mapped-objects>
+                    <execution-condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysCondition"/>
+                    <other-parameters>
+                        <command-parameter-value>
+                            <parameter-definition>5750689b-22a1-405e-9c5e-8a861c26af33</parameter-definition>
+                        </command-parameter-value>
+                    </other-parameters>
+                    <workflow-command>b11b5f8f-2a25-4724-be80-9d4fa0e6b4b9</workflow-command>
+                </command-detail>
+            </command-details>
+            <execution-condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="alwaysCondition"/>
+        </row>
+    </rows>
+    <user-input-groups>
+        <user-input-group expandByDefault="false" name="">
+            <user-inputs>
+                <user-input description="Destination Cluster Name." displayName="Destination Cluster" locked="false" mandatory="true" name="$DestinationCluster" uuid="28a8f7b0-0de8-4c20-9566-9c7ab9a0364c">
+                    <user-input-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="queryUserInputType">
+                        <query>SELECT
+    cluster.name AS Name,
+    cluster.primary_address AS 'Primary Address',
+    cluster.version AS 'Version'
+FROM
+    cm_storage.cluster
+WHERE
+    CAST(SUBSTRING(cluster.version,1,3) AS DECIMAL(2,1)) &gt;= 8.2
+ORDER BY
+    cluster.name </query>
+                    </user-input-type>
+                </user-input>
+                <user-input description="Destination Storage Virtual Machine Name." displayName="Destination Storage Virtual Machine" locked="false" mandatory="true" name="$DestinationVserver" uuid="4c80e48e-31e0-47ea-8770-756e26865db1">
+                    <user-input-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="queryUserInputType">
+                        <query>SELECT
+    vserver.name AS Name
+FROM
+    cm_storage.cluster cluster,
+    cm_storage.vserver vserver
+WHERE
+    vserver.cluster_id = cluster.id
+    AND cluster.name = '${DestinationCluster}'
+    AND vserver.type = 'data'
+ORDER BY
+    vserver.name ASC</query>
+                    </user-input-type>
+                </user-input>
+                <user-input description="Destination Volume Name." displayName="Destination Volume" locked="false" mandatory="true" name="$DestinationVolume" uuid="d77aaa40-28bf-46bf-9c3a-bd73d1bd25ab">
+                    <user-input-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="queryUserInputType">
+                        <query>SELECT
+    volume.name AS Name,
+    aggregate.name as Aggregate,
+    volume.size_mb AS 'Total Size (MB)',
+    volume.used_size_mb AS 'Used Size (MB)',
+    volume.space_guarantee AS 'Space Guarantee'
+FROM
+    cm_storage.cluster,
+    cm_storage.aggregate,
+    cm_storage.vserver,
+    cm_storage.volume
+WHERE
+    cluster.id = vserver.cluster_id
+    AND aggregate.id = volume.aggregate_id
+    AND vserver.id = volume.vserver_id
+    AND volume.style = 'flex'
+    AND volume.type = 'dp'
+    AND vserver.name = '${DestinationVserver}'
+    AND cluster.name='${DestinationCluster}'
+    AND vserver.is_repository IS NOT TRUE
+ORDER BY
+    volume.name </query>
+                    </user-input-type>
+                </user-input>
+            </user-inputs>
+        </user-input-group>
+    </user-input-groups>
+    <workflow-constants/>
+</tabularWorkflow>
