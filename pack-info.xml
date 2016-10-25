@@ -3,7 +3,40 @@
     <author>abhit</author>
     <certification>COMMUNITY</certification>
     <description>Test Pack</description>
-    <entities/>
+    <entities>
+        <entity>
+            <certification>COMMUNITY</certification>
+            <description>The 'Abort SnapMirror' command stops ongoing transfers for a SnapMirror/SnapVault relationship. The relationship is identified by its destination endpoint.</description>
+            <name>Abort SnapMirror - copy</name>
+            <type>Command</type>
+            <uuid>6771f4ab-9b3a-44d1-bb17-24e51217833a</uuid>
+            <version>1.0.0</version>
+        </entity>
+        <entity>
+            <certification>COMMUNITY</certification>
+            <description>The 'Abort SnapMirror' workflow stops ongoing transfers for a SnapMirror or SnapVault relationship. The relationship is identified by its destination endpoint.</description>
+            <name>Abort SnapMirror relationship Copy- Test</name>
+            <type>Workflow</type>
+            <uuid>7069b86c-da21-4233-a553-591e04719037</uuid>
+            <version>1.1.0</version>
+        </entity>
+        <entity>
+            <certification>COMMUNITY</certification>
+            <description>The 'Abort SnapMirror' workflow stops ongoing transfers for a SnapMirror or SnapVault relationship. The relationship is identified by its destination endpoint.</description>
+            <name>Abort SnapMirror relationship Copy- Test2</name>
+            <type>Workflow</type>
+            <uuid>7df1ef13-3c1f-4911-85e0-7ed142c2eccb</uuid>
+            <version>1.0.0</version>
+        </entity>
+        <entity>
+            <certification>COMMUNITY</certification>
+            <description>The 'Abort SnapMirror' workflow stops ongoing transfers for a SnapMirror or SnapVault relationship. The relationship is identified by its destination endpoint.</description>
+            <name>Abort SnapMirror relationship Copy- Test1</name>
+            <type>Workflow</type>
+            <uuid>bc330c87-132a-4693-8dc7-e2767047da44</uuid>
+            <version>1.0.0</version>
+        </entity>
+    </entities>
     <minWfaVersion>4.1.0.0.0</minWfaVersion>
     <name>Test Pack</name>
     <uuid>50812de0-7725-47db-9bfe-30ffa3096a53</uuid>

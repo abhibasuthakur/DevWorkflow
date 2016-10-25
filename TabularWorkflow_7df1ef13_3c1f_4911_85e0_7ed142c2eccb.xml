@@ -18,7 +18,7 @@
             <command-details>
                 <command-detail failureStrategy="ABORT">
                     <command-mapped-objects>
-                        <command-mapped-object objectName="SnapMirror" variableName="snapmirror4">
+                        <command-mapped-object objectName="SnapMirror" variableName="snapmirror6">
                             <define-object>
 <define-object-property-values>
     <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
@@ -61,7 +61,7 @@
     <filter-parameter-value value="$DestinationCluster">
         <parameter>c278bdee-4d05-478d-858a-54016c90af9b</parameter>
     </filter-parameter-value>
-    <filter-parameter-value value="$DestinationVolume2">
+    <filter-parameter-value value="$DestinationVolume5">
         <parameter>c9da62f1-9d6e-47a2-9064-077607911274</parameter>
     </filter-parameter-value>
     <filter-parameter-value value="$DestinationVserver">
@@ -143,7 +143,7 @@ ORDER BY
     volume.name </query>
                     </user-input-type>
                 </user-input>
-                <user-input locked="false" mandatory="false" name="$DestinationVolume2" uuid="ac46c25f-e0fa-4ab1-922c-75cf853d4e73">
+                <user-input locked="false" mandatory="false" name="$DestinationVolume5" uuid="ce93933b-92a9-4905-8e41-20d1e3b9a7e5">
                     <user-input-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="stringUserInputType" regularExpression=""/>
                 </user-input>
             </user-inputs>
