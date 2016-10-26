@@ -55,6 +55,37 @@ $wfa_util-&gt;checkEvalFailure(
     $@
 );
 
+
+eval {
+
+    $wfa_util-&gt;sendLog('INFO',
+        &quot;Connecting to the cluster: $DestinationCluster/$DestinationClusterIp&quot;
+    );
+    my $server
+        = $wfa_util-&gt;connect($DestinationClusterIp, $DestinationVserver);
+
+    $wfa_util-&gt;sendLog('INFO',
+        &quot;Aborting transfer for the relationship : $DestinationCluster://$DestinationVserver/$DestinationVolume&quot;
+    );
+
+    my %input = (
+        'destination-vserver' =&gt; $DestinationVserver,
+        'destination-volume'  =&gt; $DestinationVolume
+    );
+
+    if (defined $ClearCheckpoint) {
+        $input{'clear-checkpoint'} = $ClearCheckpoint;
+    }
+    $server-&gt;snapmirror_abort(%input);
+    $wfa_util-&gt;sendLog('INFO', 'Abort operation completed successfully.');
+};
+
+$wfa_util-&gt;checkEvalFailure(
+    &quot;Failed to abort transfer for the relationship $DestinationCluster://$DestinationVserver/$DestinationVolume&quot;,
+    $@
+);
+
+
 </command>
             <commandLanguage>PERL</commandLanguage>
         </command-implementation>

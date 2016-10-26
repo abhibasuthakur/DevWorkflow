@@ -18,7 +18,7 @@
             <command-details>
                 <command-detail failureStrategy="ABORT">
                     <command-mapped-objects>
-                        <command-mapped-object objectName="SnapMirror" variableName="snapmirror6">
+                        <command-mapped-object objectName="SnapMirror" variableName="snapmirror8">
                             <define-object>
 <define-object-property-values>
     <define-object-property-value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="expressionValue">
