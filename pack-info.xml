@@ -23,17 +23,17 @@
         <entity>
             <certification>COMMUNITY</certification>
             <description>The 'Abort SnapMirror' workflow stops ongoing transfers for a SnapMirror or SnapVault relationship. The relationship is identified by its destination endpoint.</description>
-            <name>Abort SnapMirror relationship Copy- Test2</name>
+            <name>Abort SnapMirror relationship Copy- Test1</name>
             <type>Workflow</type>
-            <uuid>7df1ef13-3c1f-4911-85e0-7ed142c2eccb</uuid>
+            <uuid>bc330c87-132a-4693-8dc7-e2767047da44</uuid>
             <version>1.0.0</version>
         </entity>
         <entity>
             <certification>COMMUNITY</certification>
             <description>The 'Abort SnapMirror' workflow stops ongoing transfers for a SnapMirror or SnapVault relationship. The relationship is identified by its destination endpoint.</description>
-            <name>Abort SnapMirror relationship Copy- Test1</name>
+            <name>Abort SnapMirror relationship Copy- Test2</name>
             <type>Workflow</type>
-            <uuid>bc330c87-132a-4693-8dc7-e2767047da44</uuid>
+            <uuid>7df1ef13-3c1f-4911-85e0-7ed142c2eccb</uuid>
             <version>1.0.0</version>
         </entity>
     </entities>
