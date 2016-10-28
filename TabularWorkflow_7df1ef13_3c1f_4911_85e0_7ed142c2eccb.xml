@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<tabularWorkflow considerReservedElements="true" description="The 'Abort SnapMirror' workflow stops ongoing transfers for a SnapMirror or SnapVault relationship. The relationship is identified by its destination endpoint." enableElementExistenceValidation="true" name="Abort SnapMirror relationship Copy- Test2" readyForProduction="false">
+<tabularWorkflow considerReservedElements="true" description="The 'Abort SnapMirror' workflow stops ongoing transfers for a SnapMirror or SnapVault relationship. The relationship is identified by its destination endpoint." enableElementExistenceValidation="true" name="Abort SnapMirror relationship Copy- Test12" readyForProduction="false">
     <certification>COMMUNITY</certification>
     <uuid>7df1ef13-3c1f-4911-85e0-7ed142c2eccb</uuid>
     <version>1.0.0</version>
